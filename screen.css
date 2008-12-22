@@ -1,11 +1,6 @@
-body#home #logo {
+#logo {
 	float: left;
-	width: 190px;
-}
-
-body#home #about {
-	float: left;
-	width: 390px;
+	width: 300px;
 }
 
 ul#repos {
@@ -16,7 +11,27 @@ ul#repos {
 }
 
 span.fork {
-	color: #f00;
+	color: #FF3321;
+}
+
+#root {
+	height: 300px;
+}
+
+#footer .menu {
+	list-style: none;
+	margin-left: 100px;
+}
+
+#footer .menu li {
+	display: inline;
+	float: left;
+	font-style: italic;
+	margin-right: 30px;
+}
+
+#root_footer {
+	float: clear;
 }
 
 * html body {
@@ -27,8 +42,18 @@ span.fork {
 	overflow: auto;
 }
 body {
-	color: #333333;
+	color: #eee;
 	font-family: Georgia;
 	font-size: 16px;
 	line-height: 1.5;
+	background-color: #004C7E;
 }
+
+a {
+	color: #eee;
+}
+
+a:hover {
+	color: #fff;
+}
+

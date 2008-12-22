@@ -1,3 +1,7 @@
+body#home #about {
+	float: left;
+}
+
 ul#repos {
   list-style: none;
   padding: 0;

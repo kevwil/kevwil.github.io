@@ -1,5 +1,11 @@
+body#home #logo {
+	float: left;
+	width: 190px;
+}
+
 body#home #about {
 	float: left;
+	width: 390px;
 }
 
 ul#repos {

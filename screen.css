@@ -5,6 +5,10 @@ ul#repos {
   font-size: 13px;
 }
 
+span.fork {
+	color: f00;
+}
+
 body {
 	font-family: Georgia;
 	line-height: 1.5;

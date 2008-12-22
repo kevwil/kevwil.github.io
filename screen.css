@@ -1,0 +1,11 @@
+ul#repos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+body {
+	font-family: Georgia;
+	line-height: 1.5;
+}

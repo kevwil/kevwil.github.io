@@ -22,14 +22,15 @@
         font-family: 'Syncopate', sans-serif;
         font-size: 3em;
       }
+      footer {
+        text-align: center;
+      }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       $(function() {
-        var limit = 30;            // how many repos to list
-        var login = 'kevwil';      // your username
-
-        $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
+        // old script used v1, newer script uses v2, current api is v3 ... sigh
+        $.getJSON('http://github.com/api/v1/json/kevwil?callback=?', function(data) {
           var repos = $.grep(data.user.repositories, function(repo, i) {
             return repo.description;
           });
@@ -38,13 +39,16 @@
             return b.watchers - a.watchers
           });
 
-          $.each(repos.slice(0, limit), function() {
+          $.each(repos.slice(0, 30), function() {
             if(this.fork){
               $('#forks').append('<dt><a href="' + this.url + '">' + this.name + '</a> <span class="label warning">fork</span></dt><dd>' + this.description + '</dd>');
             }else{
               $('#mycode').append('<dt><a href="' + this.url + '">' + this.name + '</a></dt><dd>' + this.description + '</dd>');
             }
           });
+        });
+        $.getJSON('http://github.com/api/v2/json/user/show/kevwil?callback=?', {}, function(data){
+          $('#me_link').attr('title','github user #'+data.user.id);
         });
       });
     </script>
@@ -73,7 +77,7 @@
       </div>
     </div>
     <footer>
-      <p>&copy; Kevin Williams 2012</p>
+      <p>&copy; <a href="http://about.me/kevwil" rel="author" id="me_link">Kevin Williams</a> <a href="http://www.nasa.gov/topics/earth/features/2012.html">2012</a></p>
     </footer>
   </body>
 </html>

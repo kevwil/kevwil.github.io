@@ -56,9 +56,9 @@
 
         $.each(repos.slice(0, 30), function() {
           if(this.fork){
-            $('#forks').append('<dt><a href="' + this.url + '">' + this.name + '</a> <span class="label warning">fork</span></dt><dd>' + this.description + '</dd>');
+            $('#forks').append('<dt><a href="' + this.html_url + '">' + this.name + '</a> <span class="label warning">fork</span></dt><dd>' + this.description + '</dd>');
           }else{
-            $('#mycode').append('<dt><a href="' + this.url + '">' + this.name + '</a></dt><dd>' + this.description + '</dd>');
+            $('#mycode').append('<dt><a href="' + this.html_url + '">' + this.name + '</a></dt><dd>' + this.description + '</dd>');
           }
         });
       });

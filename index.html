@@ -68,7 +68,7 @@
       });
       $.getJSON('https://api.github.com/users/kevwil?callback=?', {}, function(data){
         $('#me_link').attr('title','github user #'+data.data.id);
-        $('#user_id').text('Github User # '+data.data.id);
+        $('#user_id').text('Github User #'+data.data.id);
       });
     });
   </script>
